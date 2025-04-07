@@ -2,11 +2,25 @@
     padding: 100px;
     text-align: center;
 
+    h1 {
+        @media (max-width: 600px) {
+            font-size: 25px;
+        }
+    }
+
     span {
         font-size: 64px;
+
+        @media (max-width: 600px) {
+            font-size: 50px;
+        }
     }
 }
 
 .desc {
     font-size: 20px;
+
+    @media (max-width: 600px) {
+        font-size: 15px;
+    }
 }

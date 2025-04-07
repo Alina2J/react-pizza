@@ -12,11 +12,21 @@
 
     b {
       margin-right: 8px;
+      text-wrap-mode: nowrap;
     }
 
     span {
       color: $orange;
       border-bottom: 1px dashed $orange;
+      cursor: pointer;
+    }
+
+    a {
+      background-color: $orange;
+      color: #fff;
+      margin-left: 10px;
+      padding: 5px 12px;
+      border-radius: 50%;
       cursor: pointer;
     }
   }
