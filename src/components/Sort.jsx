@@ -28,12 +28,12 @@ function Sort({ value, onClickItem, sortDirection, setSortDirection }) {
         </svg>
         <b>Сортировка по:</b>
         <span onClick={() => setOpen(!open)}>{value.name}</span>
-        <a
+        <p
           onClick={() =>
             sortDirection === 'desc' ? setSortDirection('asc') : setSortDirection('desc')
           }>
           {sortDirection === 'desc' ? '⬇︎' : '⬆︎'}
-        </a>
+        </p>
       </div>
       {open && (
         <div className="sort__popup">
