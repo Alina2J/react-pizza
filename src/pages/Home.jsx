@@ -5,8 +5,9 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
+import { SearchContext } from '../App';
 
-export default function Home({ searchValue }) {
+export default function Home() {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
@@ -18,7 +19,10 @@ export default function Home({ searchValue }) {
   const [emptyPizza, setEmptyPizza] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
 
+  const { searchValue } = React.useContext(SearchContext);
+
   const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
+  const pizzas = items.map((pizza) => <PizzaBlock key={pizza.id} {...pizza} />);
 
   // Статичный поиск через js
   // const pizzas = items
@@ -26,8 +30,6 @@ export default function Home({ searchValue }) {
   //     return obj.title.toLowerCase().includes(searchValue.toLowerCase()) ? true : false;
   //   })
   //   .map((pizza) => <PizzaBlock key={pizza.id} {...pizza} />);
-
-  const pizzas = items.map((pizza) => <PizzaBlock key={pizza.id} {...pizza} />);
 
   React.useEffect(() => {
     setIsLoading(true);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default function index() {
+export default function Cart() {
   return (
     <div class="cart">
       <div class="cart__top">
